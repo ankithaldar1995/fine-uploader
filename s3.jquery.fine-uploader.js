@@ -6412,6 +6412,10 @@
                         }
                     } else if (spec.signatureVersion === 4) {
                         awsParams[qq.s3.util.V4_SIGNATURE_PARAM_NAME] = policyAndSignature.signature;
+                        
+                         if (policyAndSignature.date) {
+                            awsParams[qq.s3.util.DATE_PARAM_NAME] = policyAndSignature.date;
+                        }
                     }
                     if (updatedSessionToken) {
                         awsParams[qq.s3.util.SESSION_TOKEN_PARAM_NAME] = updatedSessionToken;
